@@ -5,6 +5,7 @@ const { AsliSmileModule } = NativeModules;
 
 const App = () => {
   const startSmileLiveness = async () => {
+    console.log('beforeStartSmile')
     try {
       const result = await AsliSmileModule.startSmileLiveness();
       console.log(result); // Output hasil ke konsol

@@ -3,6 +3,7 @@ package com.asliri.demo
 import android.app.Activity
 import android.graphics.Bitmap
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.asliri.aslismileliveness.sdk.AsliSmileLivenessContainer
 import com.asliri.aslismileliveness.sdk.AsliSmileLivenessListener
@@ -34,7 +35,7 @@ class LivenessActivity : AppCompatActivity(), AsliSmileLivenessListener {
     }
 
     override fun onSmileLivenessFailure(code: Int, message: String) {
-
+        Toast.makeText(this,"onSmileLivenessFailure: code=$code message=$message", Toast.LENGTH_LONG).show()
     }
 
     override fun onSmileLivenessSuccess(
@@ -42,6 +43,7 @@ class LivenessActivity : AppCompatActivity(), AsliSmileLivenessListener {
         smileBitmap: Bitmap,
         result: Boolean
     ) {
+        Toast.makeText(this,"onSmileLivenessSuccess-Result: $result", Toast.LENGTH_LONG).show()
     }
 
 }

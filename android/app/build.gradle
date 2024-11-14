@@ -122,27 +122,14 @@ android {
 
 dependencies {
     // The version of react-native is set by the React Native Gradle Plugin
-    implementation("commons-codec:commons-codec:1.17.1")
     implementation 'com.facebook.react:react-native:0.20.1'
-    implementation("com.github.Asli-RI:asli-smile-android:2.0.0-SNAPSHOT@aar")
+    api("com.github.Asli-RI:asli-smile-android:2.0.0-SNAPSHOT@aar") {
+        setTransitive(true)
+    }
     implementation 'androidx.constraintlayout:constraintlayout:2.2.0'
     implementation 'com.google.android.material:material:1.12.0'
     implementation("androidx.appcompat:appcompat:1.7.0")
-    implementation 'com.github.aabolfazl:filelogger:1.0.2'
-    implementation("com.github.Asli-RI:asli-session-core:1.0.6@aar")
-    implementation "androidx.security:security-crypto:1.0.0"
-    implementation "com.google.crypto.tink:tink-android:1.6.1"
-    implementation("com.github.Asli-RI:asli-face-core-android:0.0.2@aar")
-    implementation("com.github.Asli-RI:asli-camera-android:0.0.1@aar")
-    implementation("com.github.Asli-RI:asli-ui-android:0.0.1@aar")
-    implementation("com.github.Asli-RI:asli-face-commons-android:0.0.1@aar")
-    implementation("com.github.Asli-RI:asli-serialization-android:0.0.1@aar")
-    implementation("com.github.Asli-RI:asli-iface-android:0.0.1@aar")
-    implementation("com.github.Asli-RI:asli-commons-android:0.0.1@aar")
-    implementation("com.google.code.gson:gson:2.10.1")
-    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1" // or the latest version
-    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.6.1" // if you're using LiveData
-    implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.6.1" // runtime extension
+
 
     if (hermesEnabled.toBoolean()) {
         implementation("com.facebook.react:hermes-android")
